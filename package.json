@@ -1,0 +1,14 @@
+{
+  "name": "ember-cli-pretender",
+  "version": "0.0.0",
+  "description": "Include Pretender into am ember-cli application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ember-cli-addon"
+  ],
+  "author": "Robert Jackson",
+  "license": "MIT"
+}
