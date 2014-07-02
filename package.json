@@ -9,6 +9,10 @@
   "keywords": [
     "ember-addon"
   ],
+  "files": [
+    "vendor-addon/**",
+    "index.js"
+  ],
   "author": "Robert Jackson",
   "license": "MIT"
 }
