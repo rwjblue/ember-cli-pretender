@@ -1,4 +1,8 @@
-var forEach = [].forEach;
+(function(window){
+
+var isNode = typeof process !== 'undefined' && process.toString() === '[object process]';
+var RouteRecognizer = isNode ? require('route-recognizer')['default'] : window.RouteRecognizer;
+var FakeXMLHttpRequest = isNode ? require('./bower_components/FakeXMLHttpRequest/fake_xml_http_request') : window.FakeXMLHttpRequest;
 
 function Pretender(maps){
   maps = maps || function(){};
@@ -35,10 +39,10 @@ function interceptor(pretender) {
     FakeXMLHttpRequest.call(this);
   }
   // extend
-  var proto = new FakeXMLHttpRequest;
+  var proto = new FakeXMLHttpRequest();
   proto.send = function send(){
     FakeXMLHttpRequest.prototype.send.apply(this, arguments);
-    pretender.handleRequest(this)
+    pretender.handleRequest(this);
   };
 
   FakeRequest.prototype = proto;
@@ -63,26 +67,46 @@ Pretender.prototype = {
     this.handlers.push(handler);
 
     var registry = this.registry[verb];
-    registry.add([{path: path, handler: handler}])
+    registry.add([{path: path, handler: handler}]);
   },
   handleRequest: function handleRequest(request){
-    var handler = this._handlerFor(request);
+    var verb = request.method.toUpperCase();
+    var path = request.url;
+    var handler = this._handlerFor(verb, path, request);
 
     if (handler) {
       handler.handler.numberOfCalls++;
       this.handledRequests.push(request);
-      request.respond.apply(request, handler.handler(request));
+      this.handledRequest(verb, path, request);
+
+
+      try {
+        var statusHeadersAndBody = handler.handler(request),
+            status = statusHeadersAndBody[0],
+            headers = statusHeadersAndBody[1],
+            body = this.prepareBody(statusHeadersAndBody[2]);
+
+        request.respond(status, headers, body);
+      } catch (error) {
+        this.erroredRequest(verb, path, request, error);
+      }
     } else {
       this.unhandledRequests.push(request);
-      this.unhandledRequest(request.method.toUpperCase(), request.url, request);
+      this.unhandledRequest(verb, path, request);
     }
   },
+  prepareBody: function(body){ return body; },
+  handledRequest: function(verb, path, request){/* no-op */},
   unhandledRequest: function(verb, path, request) {
-    throw new Error("Pretender intercepted "+verb+" "+path+" but no handler was defined for this type of request")
+    throw new Error("Pretender intercepted "+verb+" "+path+" but no handler was defined for this type of request");
   },
-  _handlerFor: function(request){
-    var registry = this.registry[request.method.toUpperCase()];
-    var matches = registry.recognize(request.url);
+  erroredRequest: function(verb, path, request, error){
+    error.message = "Pretender intercepted "+verb+" "+path+" but encountered an error: " + error.message;
+    throw error;
+  },
+  _handlerFor: function(verb, path, request){
+    var registry = this.registry[verb];
+    var matches = registry.recognize(path);
 
     var match = matches ? matches[0] : null;
     if (match) {
@@ -93,6 +117,14 @@ Pretender.prototype = {
     return match;
   },
   shutdown: function shutdown(){
-    window.XMLHttpRequest = this._nativeXMLHttpRequest
+    window.XMLHttpRequest = this._nativeXMLHttpRequest;
   }
 };
+
+if (isNode) {
+  module.exports = Pretender;
+} else {
+  window.Pretender = Pretender;
+}
+
+})(window);
