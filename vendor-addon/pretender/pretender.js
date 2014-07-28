@@ -1,8 +1,7 @@
-(function(window){
-
 var isNode = typeof process !== 'undefined' && process.toString() === '[object process]';
-var RouteRecognizer = isNode ? require('route-recognizer')['default'] : window.RouteRecognizer;
+var RouteRecognizer = isNode ? require('route-recognizer') : window.RouteRecognizer;
 var FakeXMLHttpRequest = isNode ? require('./bower_components/FakeXMLHttpRequest/fake_xml_http_request') : window.FakeXMLHttpRequest;
+var forEach = [].forEach;
 
 function Pretender(maps){
   maps = maps || function(){};
@@ -123,8 +122,4 @@ Pretender.prototype = {
 
 if (isNode) {
   module.exports = Pretender;
-} else {
-  window.Pretender = Pretender;
 }
-
-})(window);
