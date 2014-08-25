@@ -10,12 +10,6 @@
   "keywords": [
     "ember-addon"
   ],
-  "files": [
-    "vendor-addon/FakeXMLHttpRequest/fake_xml_http_request.js",
-    "vendor-addon/pretender/pretender.js",
-    "vendor-addon/route-recognizer/dist/route-recognizer.js",
-    "index.js"
-  ],
   "author": "Robert Jackson",
   "license": "MIT",
   "dependencies": {
