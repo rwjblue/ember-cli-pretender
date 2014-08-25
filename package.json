@@ -18,10 +18,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/rjackson/ember-cli-pretender.git"
+    "url": "https://github.com/rwjblue/ember-cli-pretender.git"
   },
   "bugs": {
-    "url": "https://github.com/rjackson/ember-cli-pretender/issues"
+    "url": "https://github.com/rwjblue/ember-cli-pretender/issues"
   },
-  "homepage": "https://github.com/rjackson/ember-cli-pretender"
+  "homepage": "https://github.com/rwjblue/ember-cli-pretender"
 }
