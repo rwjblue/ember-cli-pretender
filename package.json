@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-pretender",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Include Pretender into am ember-cli application.",
   "main": "index.js",
   "scripts": {
