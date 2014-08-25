@@ -16,5 +16,13 @@
     "index.js"
   ],
   "author": "Robert Jackson",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rjackson/ember-cli-pretender.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rjackson/ember-cli-pretender/issues"
+  },
+  "homepage": "https://github.com/rjackson/ember-cli-pretender"
 }
