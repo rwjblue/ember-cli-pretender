@@ -1,5 +1,12 @@
 ## Unreleased
 
+## 0.2.3
+
+* Fix shim to add list of export modules.
+
+## 0.2.2
+
+* Add shim file to allow `import Pretender from 'pretender';`.
 * Fix repo URL's (rjackson -> rwjblue).
 
 ## 0.2.1
