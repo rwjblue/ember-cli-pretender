@@ -1,6 +1,0 @@
-{
-  "name": "ember-cli-pretender",
-  "dependencies": {
-    "pretender": "~0.1.0"
-  }
-}
