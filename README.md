@@ -12,5 +12,11 @@ npm install --save-dev ember-cli-pretender
 ember generate ember-cli-pretender
 ```
 
+You can then import Pretender in your tests:
+
+```javascript
+import Pretender from 'pretender';
+```
+
 see: [trek/pretender](https://github.com/trek/pretender) for pretender
 docs
