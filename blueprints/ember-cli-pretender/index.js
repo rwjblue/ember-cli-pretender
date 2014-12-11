@@ -8,6 +8,6 @@ module.exports = {
   },
 
   afterInstall: function() {
-    return this.addBowerPackageToProject('pretender', '^0.3.0');
+    return this.addBowerPackageToProject('pretender', '^0.4.3');
   }
 };
