@@ -8,7 +8,7 @@ Usage
 =====
 
 ```sh
-ember install:addon ember-cli-pretender
+ember install ember-cli-pretender
 ```
 
 You can then import Pretender in your tests:
