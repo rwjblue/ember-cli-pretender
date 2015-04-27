@@ -5,6 +5,9 @@ module.exports = {
   name: 'ember-cli-pretender',
 
   included: function included(app) {
+    if (app.app) {
+      app = app.app;
+    }
     this.app = app;
 
     if (app.env !== 'production') {
@@ -20,7 +23,6 @@ module.exports = {
 
   blueprintsPath: function() {
     return path.join(__dirname, 'blueprints');
-  },
-
+  }
 
 };
