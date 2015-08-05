@@ -20,6 +20,21 @@ import Pretender from 'pretender';
 see: [trek/pretender](https://github.com/trek/pretender) for pretender
 docs
 
+Configuration
+=====
+
+This addon may be enabled / disabled in your `ember-cli-build.js` or `Brocfile.js`:
+
+```javascript
+var app = new EmberApp({
+  pretender: {
+    enabled: true
+  }
+});
+```
+
+By default `prentender.enabled` will be set to `app.tests`. This means that prentender will be available as an import when your app includes your test suite.
+
 Nested Addon Usage Caveat
 =====
 
