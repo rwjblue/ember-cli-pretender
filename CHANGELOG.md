@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 0.4.0
+
+* Bump Pretender version to 0.9.0.
+
 ## 0.2.3
 
 * Fix shim to add list of export modules.
