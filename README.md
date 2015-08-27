@@ -33,7 +33,7 @@ var app = new EmberApp({
 });
 ```
 
-By default `pretender.enabled` will be set to `app.tests`. This means that prentender will be available as an import when your app includes your test suite.
+By default `pretender.enabled` will be set to `app.tests`. This means that pretender will be available as an import when your app includes your test suite.
 
 Nested Addon Usage Caveat
 =====

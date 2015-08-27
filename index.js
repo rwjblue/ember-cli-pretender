@@ -10,7 +10,7 @@ module.exports = {
     }
     this.app = app;
 
-    var opts = app.options.prentender || { enabled: app.tests };
+    var opts = app.options.pretender || { enabled: app.tests };
     if (opts.enabled) {
       app.import(app.bowerDirectory + '/FakeXMLHttpRequest/fake_xml_http_request.js');
       app.import(app.bowerDirectory + '/route-recognizer/dist/route-recognizer.js');
