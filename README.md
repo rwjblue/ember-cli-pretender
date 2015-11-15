@@ -17,7 +17,7 @@ You can then import Pretender in your tests:
 import Pretender from 'pretender';
 ```
 
-see: [trek/pretender](https://github.com/trek/pretender) for pretender
+see: [pretenderjs/pretender](https://github.com/pretenderjs/pretender) for pretender
 docs
 
 Configuration
