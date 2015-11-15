@@ -1,5 +1,10 @@
 ## Unreleased
 
+## 0.5.0
+
+* Bump pretender to 0.10
+* Fix typo in option name to en/disable pretender
+
 ## 0.4.0
 
 * Bump Pretender version to 0.9.0.
