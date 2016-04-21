@@ -23,7 +23,9 @@ docs
 Configuration
 =====
 
-This addon may be enabled / disabled in your `ember-cli-build.js` or `Brocfile.js`:
+By default `pretender.enabled` will be set to `app.tests`. This means that pretender will only be available as an import when your app includes your test suite.
+
+If you'd like to include Pretender into production builds as well, you can set `pretender.enabled` to `true` in your `ember-cli-build.js` or `Brocfile.js`:
 
 ```javascript
 var app = new EmberApp({
@@ -32,8 +34,6 @@ var app = new EmberApp({
   }
 });
 ```
-
-By default `pretender.enabled` will be set to `app.tests`. This means that pretender will be available as an import when your app includes your test suite.
 
 Nested Addon Usage Caveat
 =====
