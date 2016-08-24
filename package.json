@@ -46,5 +46,8 @@
   "homepage": "https://github.com/rwjblue/ember-cli-pretender",
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "dependencies": {
+    "pretender": "^1.1.0"
   }
 }
