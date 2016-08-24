@@ -62,9 +62,4 @@ module.exports = {
       });
     }
   },
-
-  blueprintsPath: function() {
-    return path.join(__dirname, 'blueprints');
-  }
-
 };
