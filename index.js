@@ -7,16 +7,18 @@ var MergeTrees = require('broccoli-merge-trees');
 module.exports = {
   name: 'ember-cli-pretender',
 
-  init: function() {
-    this._super.init && this._super.init.apply(this, arguments);
-
-    this._pretenderPath = resolve.sync('pretender');
-    this._pretenderDir = path.dirname(this._pretenderPath);
-    this._routeRecognizerPath = resolve.sync('route-recognizer', { basedir: this._pretenderDir });
-    this._fakeRequestPath = resolve.sync('fake-xml-http-request', { basedir: this._pretenderDir });
+  _findPretenderPaths: function() {
+    if (!this._pretenderPath) {
+      this._pretenderPath = resolve.sync('pretender');
+      this._pretenderDir = path.dirname(this._pretenderPath);
+      this._routeRecognizerPath = resolve.sync('route-recognizer', { basedir: this._pretenderDir });
+      this._fakeRequestPath = resolve.sync('fake-xml-http-request', { basedir: this._pretenderDir });
+    }
   },
 
   treeForVendor: function(tree) {
+    this._findPretenderPaths();
+
     var pretenderTree = new Funnel(this._pretenderDir, {
       files: [path.basename(this._pretenderPath)],
       destDir: '/pretender',
@@ -53,6 +55,8 @@ module.exports = {
 
     var opts = app.options.pretender || { enabled: app.tests };
     if (opts.enabled) {
+      this._findPretenderPaths();
+
       app.import('vendor/fake-xml-http-request/' + path.basename(this._fakeRequestPath));
       app.import('vendor/route-recognizer/' + path.basename(this._routeRecognizerPath));
       app.import('vendor/pretender/' + path.basename(this._pretenderPath));
