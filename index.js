@@ -1,14 +1,13 @@
 'use strict';
 var path = require('path');
-var resolve = require('resolve');
-var Funnel = require('broccoli-funnel');
-var MergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
   name: 'ember-cli-pretender',
 
   _findPretenderPaths: function() {
     if (!this._pretenderPath) {
+      var resolve = require('resolve');
+
       this._pretenderPath = resolve.sync('pretender');
       this._pretenderDir = path.dirname(this._pretenderPath);
       this._routeRecognizerPath = resolve.sync('route-recognizer', { basedir: this._pretenderDir });
@@ -17,6 +16,9 @@ module.exports = {
   },
 
   treeForVendor: function(tree) {
+    var Funnel = require('broccoli-funnel');
+    var MergeTrees = require('broccoli-merge-trees');
+
     this._findPretenderPaths();
 
     var pretenderTree = new Funnel(this._pretenderDir, {
