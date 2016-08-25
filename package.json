@@ -46,5 +46,11 @@
   "homepage": "https://github.com/rwjblue/ember-cli-pretender",
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "dependencies": {
+    "broccoli-funnel": "^1.0.6",
+    "broccoli-merge-trees": "^1.1.4",
+    "pretender": "^1.1.0",
+    "resolve": "^1.1.7"
   }
 }
