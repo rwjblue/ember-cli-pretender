@@ -62,10 +62,6 @@ module.exports = {
       app.import('vendor/fake-xml-http-request/' + path.basename(this._fakeRequestPath));
       app.import('vendor/route-recognizer/' + path.basename(this._routeRecognizerPath));
       app.import('vendor/pretender/' + path.basename(this._pretenderPath));
-      app.import('vendor/ember-cli-pretender/shim.js', {
-        type: 'vendor',
-        exports: { 'pretender': ['default'] }
-      });
     }
   },
 };
