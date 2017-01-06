@@ -1,5 +1,14 @@
 ## Unreleased
 
+## 1.0.0
+
+* Remove `pretender` module shim (this is now provided by pretender itself).
+
+## 0.7.0
+
+* Remove bower requirement (consume `pretender` from NPM instead).
+* Update to pretender `^1.0.0`.
+
 ## 0.6.0
 
 * Update to pretender 0.12.0.
