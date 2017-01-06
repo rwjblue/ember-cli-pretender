@@ -41,10 +41,3 @@ Nested Addon Usage Caveat
 To publish an addon that exports functionality driven by ember-cli-pretender,
 note that ember-cli-pretender must be listed in the `dependencies` for NPM
 and not the `devDependencies`.
-
-When consuming an addon that consumes ember-cli-pretender, running the
-initializing generator by hand is required.
-
-```sh
-ember generate ../node_modules/the-addon/node_modules/ember-cli-pretender/blueprints/ember-cli-pretender
-```
