@@ -42,7 +42,8 @@ module.exports = {
       pretenderTree,
       routeRecognizerTree,
       fakeRequestTree,
-    ];
+      // tree is not always defined, so filter out if empty
+    ].filter(Boolean);
 
     return new MergeTrees(trees, {
       annotation: 'ember-cli-pretender: treeForVendor'
