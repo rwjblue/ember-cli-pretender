@@ -50,7 +50,7 @@
   "dependencies": {
     "broccoli-funnel": "^1.1.0",
     "broccoli-merge-trees": "^1.2.1",
-    "pretender": "^1.4.2",
+    "pretender": "git+https://github.com/qonto/pretender.git",
     "resolve": "^1.2.0"
   }
 }
