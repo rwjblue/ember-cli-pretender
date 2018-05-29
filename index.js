@@ -1,5 +1,7 @@
 'use strict';
 var path = require('path');
+var Funnel = require('broccoli-funnel');
+var MergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
   name: 'ember-cli-pretender',
@@ -12,13 +14,12 @@ module.exports = {
       this._pretenderDir = path.dirname(this._pretenderPath);
       this._routeRecognizerPath = resolve.sync('route-recognizer', { basedir: this._pretenderDir });
       this._fakeRequestPath = resolve.sync('fake-xml-http-request', { basedir: this._pretenderDir });
+      this._abortControllerPath = resolve.sync('abortcontroller-polyfill/dist/abortcontroller-polyfill-only.js', { basedir: this._pretenderDir });
+      this._whatwgFetchPath = resolve.sync('@xg-wang/whatwg-fetch/dist/fetch.umd.js', { basedir: this._pretenderDir });
     }
   },
 
   treeForVendor: function(tree) {
-    var Funnel = require('broccoli-funnel');
-    var MergeTrees = require('broccoli-merge-trees');
-
     this._findPretenderPaths();
 
     var pretenderTree = new Funnel(this._pretenderDir, {
@@ -37,11 +38,23 @@ module.exports = {
       destDir: '/fake-xml-http-request',
     });
 
+    var abortControllerTree = new Funnel(path.dirname(this._abortControllerPath), {
+      files: [path.basename(this._abortControllerPath)],
+      destDir: '/abortcontroller-polyfill',
+    });
+
+    var whatwgFetchTree = new Funnel(path.dirname(this._whatwgFetchPath), {
+      files: [path.basename(this._whatwgFetchPath)],
+      destDir: '/whatwg-fetch',
+    });
+
     var trees = [
       tree,
       pretenderTree,
       routeRecognizerTree,
       fakeRequestTree,
+      abortControllerTree,
+      whatwgFetchTree
       // tree is not always defined, so filter out if empty
     ].filter(Boolean);
 
@@ -62,6 +75,8 @@ module.exports = {
 
       app.import('vendor/fake-xml-http-request/' + path.basename(this._fakeRequestPath));
       app.import('vendor/route-recognizer/' + path.basename(this._routeRecognizerPath));
+      app.import('vendor/abortcontroller-polyfill/' + path.basename(this._abortControllerPath));
+      app.import('vendor/whatwg-fetch/' + path.basename(this._whatwgFetchPath));
       app.import('vendor/pretender/' + path.basename(this._pretenderPath));
     }
   },
