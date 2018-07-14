@@ -1,17 +1,19 @@
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import { module, test } from 'qunit';
+import { visit, currentURL } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
 
 import Pretender from 'pretender';
 
-moduleForAcceptance('Acceptance | pretender');
+module('Acceptance | pretender', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('visiting /', function(assert) {
-  let server = new Pretender();
+  test('visiting /', async function(assert) {
+    let server = new Pretender();
 
-  server.get('/test-pretender', () => [200, {"Content-Type": "application/json"}, JSON.stringify({ status: 'ok' })]);
+    server.get('/test-pretender', () => [200, {"Content-Type": "application/json"}, JSON.stringify({ status: 'ok' })]);
 
-  visit('/');
-
-  andThen(() => assert.equal(find('#status').text(), 'ok'));
-  andThen(() => server.shutdown());
+    await visit('/');
+    assert.equal(currentURL(), '/');
+    assert.equal(this.element.querySelector('#status').textContent, 'ok');
+  });
 });

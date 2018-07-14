@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-pretender",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Include Pretender into an ember-cli application.",
   "main": "index.js",
   "directories": {
@@ -63,7 +63,7 @@
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
-    "pretender": "^1.4.2",
+    "pretender": "xg-wang/pretender#feat/fetch",
     "resolve": "^1.2.0"
   }
 }
