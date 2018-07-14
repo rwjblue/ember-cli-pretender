@@ -12,10 +12,10 @@ module.exports = {
 
       this._pretenderPath = resolve.sync('pretender');
       this._pretenderDir = path.dirname(this._pretenderPath);
-      this._routeRecognizerPath = resolve.sync('route-recognizer', { basedir: this._pretenderDir });
-      this._fakeRequestPath = resolve.sync('fake-xml-http-request', { basedir: this._pretenderDir });
-      this._abortControllerPath = resolve.sync('abortcontroller-polyfill/dist/abortcontroller-polyfill-only.js', { basedir: this._pretenderDir });
-      this._whatwgFetchPath = resolve.sync('@xg-wang/whatwg-fetch/dist/fetch.umd.js', { basedir: this._pretenderDir });
+      this._routeRecognizerPath = resolve.sync('route-recognizer');
+      this._fakeRequestPath = resolve.sync('fake-xml-http-request');
+      this._abortControllerPath = resolve.sync('abortcontroller-polyfill/dist/abortcontroller-polyfill-only.js');
+      this._whatwgFetchPath = resolve.sync('@xg-wang/whatwg-fetch/dist/fetch.umd.js');
     }
   },
 

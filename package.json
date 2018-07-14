@@ -60,10 +60,13 @@
     "configPath": "tests/dummy/config"
   },
   "dependencies": {
+    "abortcontroller-polyfill": "^1.1.9",
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
+    "fake-xml-http-request": "^2.0.0",
     "pretender": "xg-wang/pretender#feat/fetch",
-    "resolve": "^1.2.0"
+    "resolve": "^1.2.0",
+    "route-recognizer": "^0.3.3"
   }
 }
