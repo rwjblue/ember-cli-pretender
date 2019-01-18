@@ -8,14 +8,12 @@ module.exports = {
 
   _findPretenderPaths: function() {
     if (!this._pretenderPath) {
-      var resolve = require('resolve');
-
-      this._pretenderPath = resolve.sync('pretender');
+      this._pretenderPath = require.resolve('pretender');
       this._pretenderDir = path.dirname(this._pretenderPath);
-      this._routeRecognizerPath = resolve.sync('route-recognizer');
-      this._fakeRequestPath = resolve.sync('fake-xml-http-request');
-      this._abortControllerPath = resolve.sync('abortcontroller-polyfill/dist/abortcontroller-polyfill-only.js');
-      this._whatwgFetchPath = resolve.sync('@xg-wang/whatwg-fetch/dist/fetch.umd.js');
+      this._routeRecognizerPath = require.resolve('route-recognizer');
+      this._fakeRequestPath = require.resolve('fake-xml-http-request');
+      this._abortControllerPath = require.resolve('abortcontroller-polyfill/dist/abortcontroller-polyfill-only.js');
+      this._whatwgFetchPath = require.resolve('@xg-wang/whatwg-fetch/dist/fetch.umd.js');
     }
   },
 
