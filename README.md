@@ -35,6 +35,16 @@ var app = new EmberApp({
 });
 ```
 
+You can also opt out of including the fetch polyfill, if you do not need to run your tests in older browsers:
+
+```javascript
+var app = new EmberApp({
+  pretender: {
+    includeFetchPolyfill: false
+  }
+});
+```
+
 Nested Addon Usage Caveat
 =====
 
