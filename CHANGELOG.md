@@ -1,5 +1,30 @@
 ## Unreleased
 
+## v3.1.0 (2019-01-18)
+
+#### :rocket: Enhancement
+* [#67](https://github.com/rwjblue/ember-cli-pretender/pull/67) Allow opt-out of fetch polyfill ([@mydea](https://github.com/mydea))
+
+#### :bug: Bug Fix
+* [#68](https://github.com/rwjblue/ember-cli-pretender/pull/68) Replace `resolve.sync()` with `require.resolve()` ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#65](https://github.com/rwjblue/ember-cli-pretender/pull/65) Switch fetch polyfill to official version ([@nlfurniss](https://github.com/nlfurniss))
+
+#### Committers: 3
+- Francesco Novy ([@mydea](https://github.com/mydea))
+- Nathaniel Furniss ([@nlfurniss](https://github.com/nlfurniss))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
+## v3.0.0 (2018-07-18)
+
+#### :boom: Breaking Change
+* [#62](https://github.com/rwjblue/ember-cli-pretender/pull/62) Update dependencies ([@xg-wang](https://github.com/xg-wang))
+
+#### Committers: 1
+- Thomas Wang ([@xg-wang](https://github.com/xg-wang))
+
 ## 1.0.0
 
 * Remove `pretender` module shim (this is now provided by pretender itself).
