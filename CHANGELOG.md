@@ -1,5 +1,13 @@
 ## Unreleased
 
+## v3.1.1 (2019-02-06)
+
+#### :bug: Bug Fix
+* [#69](https://github.com/rwjblue/ember-cli-pretender/pull/69) Search for official version whatwg-fetch ([@xg-wang](https://github.com/xg-wang))
+
+#### Committers: 1
+- Thomas Wang ([@xg-wang](https://github.com/xg-wang))
+
 ## v3.1.0 (2019-01-18)
 
 #### :rocket: Enhancement
