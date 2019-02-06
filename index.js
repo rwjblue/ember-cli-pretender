@@ -13,7 +13,7 @@ module.exports = {
       this._routeRecognizerPath = require.resolve('route-recognizer');
       this._fakeRequestPath = require.resolve('fake-xml-http-request');
       this._abortControllerPath = require.resolve('abortcontroller-polyfill/dist/abortcontroller-polyfill-only.js');
-      this._whatwgFetchPath = require.resolve('@xg-wang/whatwg-fetch/dist/fetch.umd.js');
+      this._whatwgFetchPath = require.resolve('whatwg-fetch/dist/fetch.umd.js');
     }
   },
 
