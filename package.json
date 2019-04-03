@@ -67,7 +67,7 @@
     "broccoli-merge-trees": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
     "fake-xml-http-request": "^2.0.0",
-    "pretender": "^2.1.0",
+    "pretender": "^3.0.1",
     "route-recognizer": "^0.3.3",
     "whatwg-fetch": "^3.0.0"
   }
