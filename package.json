@@ -65,6 +65,7 @@
     "abortcontroller-polyfill": "^1.1.9",
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^3.0.0",
+    "chalk": "^2.4.2",
     "ember-cli-babel": "^6.6.0",
     "fake-xml-http-request": "^2.0.0",
     "pretender": "^2.1.0",

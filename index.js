@@ -17,6 +17,29 @@ module.exports = {
     }
   },
 
+  _autoimportInfo() {
+    let chalk = require("chalk");
+    let info = chalk.yellow(`
+  INFORMATION (ember-cli-pretender)
+  ${chalk.inverse(
+    "ember-auto-import"
+  )} seems to be in your package dependencies.
+  As a result, you don't need pretender to be wrapped anymore.
+  You can install ${chalk.bold("pretender")} and remove ${chalk.bold(
+      "ember-cli-pretender"
+    )}.
+        `);
+    // eslint-disable-next-line no-console
+    console.log(info);
+  },
+
+  init() {
+    this._super.init && this._super.init.apply(this, arguments);
+    if (this.parent.dependencies()["ember-auto-import"]) {
+      this._autoimportInfo();
+    }
+  },
+
   treeForVendor: function(tree) {
     this._findPretenderPaths();
 
