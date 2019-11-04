@@ -1,4 +1,14 @@
-## Unreleased
+## v3.2.0 (2019-11-04)
+
+#### :rocket: Enhancement
+* [#70](https://github.com/rwjblue/ember-cli-pretender/pull/70) Update Pretender version (^3.0.1) ([@givanse](https://github.com/givanse))
+
+#### :memo: Documentation
+* [#72](https://github.com/rwjblue/ember-cli-pretender/pull/72) ember-auto-import: Warn when it is a dependency ([@dcyriller](https://github.com/dcyriller))
+
+#### Committers: 2
+- Cyrille David ([@dcyriller](https://github.com/dcyriller))
+- Gastón I. Silva ([@givanse](https://github.com/givanse))
 
 ## v3.1.1 (2019-02-06)
 
