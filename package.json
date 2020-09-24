@@ -16,7 +16,7 @@
     "test:all": "ember try:each"
   },
   "engines": {
-    "node": "6.* || 8.* || >= 10.*"
+    "node": "10.* || >= 12.*"
   },
   "keywords": [
     "ember-addon"
@@ -66,7 +66,7 @@
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^3.0.0",
     "chalk": "^2.4.2",
-    "ember-cli-babel": "^6.6.0",
+    "ember-cli-babel": "^7.0.0",
     "fake-xml-http-request": "^2.0.0",
     "pretender": "^3.0.1",
     "route-recognizer": "^0.3.3",
