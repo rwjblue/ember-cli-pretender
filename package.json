@@ -62,14 +62,14 @@
     "configPath": "tests/dummy/config"
   },
   "dependencies": {
-    "abortcontroller-polyfill": "^1.1.9",
-    "broccoli-funnel": "^2.0.1",
-    "broccoli-merge-trees": "^3.0.0",
-    "chalk": "^2.4.2",
-    "ember-cli-babel": "^7.0.0",
-    "fake-xml-http-request": "^2.0.0",
-    "pretender": "^3.0.1",
-    "route-recognizer": "^0.3.3",
-    "whatwg-fetch": "^3.0.0"
+    "abortcontroller-polyfill": "^1.5.0",
+    "broccoli-funnel": "^3.0.3",
+    "broccoli-merge-trees": "^4.2.0",
+    "chalk": "^4.1.0",
+    "ember-cli-babel": "^7.22.1",
+    "fake-xml-http-request": "^2.1.1",
+    "pretender": "^3.4.3",
+    "route-recognizer": "^0.3.4",
+    "whatwg-fetch": "^3.4.1"
   }
 }
