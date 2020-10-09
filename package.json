@@ -2,6 +2,19 @@
   "name": "ember-cli-pretender",
   "version": "3.2.0",
   "description": "Include Pretender into an ember-cli application.",
+  "keywords": [
+    "ember-addon"
+  ],
+  "homepage": "https://github.com/rwjblue/ember-cli-pretender",
+  "bugs": {
+    "url": "https://github.com/rwjblue/ember-cli-pretender/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rwjblue/ember-cli-pretender.git"
+  },
+  "license": "MIT",
+  "author": "Robert Jackson",
   "main": "index.js",
   "directories": {
     "doc": "doc",
@@ -15,14 +28,17 @@
     "test": "ember test",
     "test:all": "ember try:each"
   },
-  "engines": {
-    "node": "10.* || >= 12.*"
+  "dependencies": {
+    "abortcontroller-polyfill": "^1.5.0",
+    "broccoli-funnel": "^3.0.3",
+    "broccoli-merge-trees": "^4.2.0",
+    "chalk": "^4.1.0",
+    "ember-cli-babel": "^7.22.1",
+    "fake-xml-http-request": "^2.1.1",
+    "pretender": "^3.4.3",
+    "route-recognizer": "^0.3.4",
+    "whatwg-fetch": "^3.4.1"
   },
-  "keywords": [
-    "ember-addon"
-  ],
-  "author": "Robert Jackson",
-  "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.7.0",
     "ember-ajax": "^3.0.0",
@@ -48,28 +64,32 @@
     "eslint-plugin-node": "^6.0.1",
     "lerna-changelog": "^0.8.2",
     "loader.js": "^4.2.3",
-    "qunit-dom": "^0.6.2"
+    "qunit-dom": "^0.6.2",
+    "release-it": "^14.0.2",
+    "release-it-lerna-changelog": "^2.4.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rwjblue/ember-cli-pretender.git"
+  "engines": {
+    "node": "10.* || >= 12.*"
   },
-  "bugs": {
-    "url": "https://github.com/rwjblue/ember-cli-pretender/issues"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
-  "homepage": "https://github.com/rwjblue/ember-cli-pretender",
   "ember-addon": {
     "configPath": "tests/dummy/config"
   },
-  "dependencies": {
-    "abortcontroller-polyfill": "^1.5.0",
-    "broccoli-funnel": "^3.0.3",
-    "broccoli-merge-trees": "^4.2.0",
-    "chalk": "^4.1.0",
-    "ember-cli-babel": "^7.22.1",
-    "fake-xml-http-request": "^2.1.1",
-    "pretender": "^3.4.3",
-    "route-recognizer": "^0.3.4",
-    "whatwg-fetch": "^3.4.1"
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    }
   }
 }
