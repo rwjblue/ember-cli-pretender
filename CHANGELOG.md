@@ -1,3 +1,12 @@
+## v4.0.0 (2020-10-09)
+
+#### :boom: Breaking Change
+* [#73](https://github.com/rwjblue/ember-cli-pretender/pull/73) Drop Node < 10 support; Upgrade ember-cli-babel to v7 ([@nlfurniss](https://github.com/nlfurniss))
+
+#### Committers: 1
+- Nathaniel Furniss ([@nlfurniss](https://github.com/nlfurniss))
+
+
 ## v3.2.0 (2019-11-04)
 
 #### :rocket: Enhancement
