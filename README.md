@@ -4,6 +4,8 @@ ember-cli-pretender
 Simple wrapper for pretender.js, this project removes the need for the
 developer to know which files need to be imported.
 
+NOTE: Please use [pretender](https://github.com/pretenderjs/pretender) directly instead. Use [ember-auto-import](https://github.com/ef4/ember-auto-import) to import pretender without the need for ember-cli-pretender to add it via app.imports.
+
 Usage
 =====
 
